@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+h1 {
+  font-size: 22px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+code {
+  font-size: 1.2em;
+}
+
+ul {
+  padding-inline-start: 20px;
+}
+
+.errorPage {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.errorPageContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  align-items: center;
+  /* border: 1px solid #000; */
+  border-radius: 15px;
+  height: 280px;
+  width: 250px;
+  min-height: 250px;
+  background-color: #55a5b4;
+  color: white;
+}
+
+.errorPageTextLocation {
+  text-decoration: wavy underline #c70c0c;
+  margin-top: 10px;
+}
+
+.errorPageTitle {
+  text-transform: uppercase;
+  margin: 0;
+  margin-top: 25px;
+}
+
+.errorPageText {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.errorPageText>* {
+  margin: 5px;
+}
+
+.errorPageTextNotFound {
+  font-size: 30px;
+  padding-top: 30px;
+}

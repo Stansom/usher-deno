@@ -1,0 +1,13 @@
+{
+  "name": "Usher nodejs example",
+  "version": "1.0.0",
+  "main": "src/main,js",
+  "author": "Stansom",
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  },
+  "scripts": {},
+  "dependencies": {
+    "@stansom/usher": "^0.1.6"
+  }
+}

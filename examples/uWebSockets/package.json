@@ -1,0 +1,14 @@
+{
+  "name": "uWebSockets simple bench",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Stansom",
+  "devDependencies": {},
+  "scripts": {
+    "server": "node index.js"
+  },
+  "dependencies": {
+    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v20.48.0",
+    "@stansom/usher": "1.0.1"
+  }
+}

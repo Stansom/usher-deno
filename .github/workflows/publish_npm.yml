@@ -1,0 +1,47 @@
+name: Publish to NPM
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: setup deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.x
+          
+      - name: Install dnt
+        run: deno add @deno/dnt
+
+      - name: Get Version
+        id: vars
+        run: echo ::set-output name=version::$(echo ${{github.ref_name}} | sed 's/^v//')
+
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          registry-url: https://registry.npmjs.com
+
+      - name: Build
+        run: deno task build:npm $NPM_VERSION
+        env:
+          NPM_VERSION: ${{steps.vars.outputs.version}}
+          
+      - name: Publish
+        run: npm publish --access=public
+        working-directory: ./npm
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

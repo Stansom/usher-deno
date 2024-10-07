@@ -1,0 +1,36 @@
+{
+  "name": "usher-react",
+  "version": "0.0.0",
+  "main": "src/index.js",
+  "author": "Stansom",
+  "scripts": {
+    "start": "ESLINT_NO_DEV_ERRORS=true DISABLE_ESLINT_PLUGIN=true react-scripts start",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
+    "test": "DISABLE_ESLINT_PLUGIN=true react-scripts test --env=jsdom",
+    "eject": "DISABLE_ESLINT_PLUGIN=true react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-scripts": "^5.0.0",
+    "@stansom/usher": "^0.1.6"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.6.3",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
+    "prop-types": "^15.8.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

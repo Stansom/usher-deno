@@ -115,7 +115,7 @@ Where:
 > ```
 >
 > Just call the route function with a routes array and a request object to get a response object <br>
-> which can be used in any server, watch [the node example](examples/node_example/README.MD) for
+> which can be used in any server, watch [the node example](examples/node/README.MD) for
 > NodeJS in the examples directory. <br>
 > These examples are also available:
 >

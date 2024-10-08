@@ -1,23 +1,28 @@
-function BooksRouteGet({ pathParams: params }) {
-  if (params.id && params.commentId) {
+function BooksRouteGet(req) {
+  const { pathParams: params } = req;
+
+  const id = params.get("id");
+  const commentId = params.get("commentId");
+
+  if (id && commentId) {
     return {
       status: 200,
       body: JSON.stringify({
-        book: params.id,
-        comment: params.commentId,
+        book: id,
+        comment: commentId,
       }),
       headers: ["Content-Type", "application/json"],
     };
-  } else if (params.id) {
+  } else if (id) {
     return {
       status: 200,
-      body: "Book " + params.id,
+      body: "Book " + id,
       headers: ["Content-Type", "text/plain"],
     };
-  } else if (params.commentId) {
+  } else if (commentId) {
     return {
       status: 200,
-      body: "Comment " + params.commentId,
+      body: "Comment " + commentId,
       headers: ["Content-Type", "text/plain"],
     };
   }
@@ -28,11 +33,16 @@ function BooksRouteGet({ pathParams: params }) {
   };
 }
 
-function BooksRoutePost({ pathParams: params }) {
-  if (params.id && params.commentId) {
+function BooksRoutePost(req) {
+  const { pathParams: params } = req;
+
+  const id = params.get("id");
+  const commentId = params.get("commentId");
+
+  if (id && commentId) {
     return {
       status: 200,
-      body: `A book ${params.id} with comment ${params.commentId} was created`,
+      body: `A book ${id} with comment ${commentId} was created`,
       headers: ["Content-Type", "text/plain"],
     };
   }

@@ -5,10 +5,17 @@ const { routes } = require("./routes/routes");
 const serverAddress = "127.0.0.1";
 const serverPort = 3030;
 
-const server = createServer(async (req, res) => {
-  const { url, method } = req;
+function convertRequest(req) {
+  return {
+    method: req.method,
+    url: req.url,
+    headers: { ...req.headers },
+    body: req.body,
+  };
+}
 
-  const { status, body, headers } = await route(routes, { path: url, method });
+const server = createServer(async (req, res) => {
+  const { status, body, headers } = await route(routes, convertRequest(req));
 
   res.statusCode = status;
   res.setHeader(...(headers || "Content-Type"), "text/plain");

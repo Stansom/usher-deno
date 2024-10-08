@@ -1,8 +1,11 @@
-function GreetUser({ pathParams: params }) {
-  console.log(params);
+function GreetUser(req) {
+  const { pathParams: params } = req;
+  const name = params.get("name");
+  const surname = params.get("surname");
+
   return {
     status: 200,
-    body: `Hi ${params.name}${params.surname ? params.surname : "."}`,
+    body: `Hi ${name}${surname || "."}`,
   };
 }
 

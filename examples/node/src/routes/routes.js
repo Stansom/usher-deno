@@ -10,12 +10,12 @@ const routes = [
       GET: HomeRoute,
     },
   },
-  // {
-  //   path: "/user/:id?",
-  //   methods: {
-  //     GET: UserRoute,
-  //   },
-  // },
+  {
+    path: "/user/:id?",
+    methods: {
+      GET: UserRoute,
+    },
+  },
   {
     path: "/book/:id?/comment/:commentId?",
     methods: {
